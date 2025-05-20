@@ -1,16 +1,40 @@
-<<<<<<< HEAD
-# React + Vite
+# Food Delivery App - TastyTrack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive food delivery web application built with **React** and **Vite**.  
+Users can browse menus, add items to the cart, and enjoy a smooth, interactive experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Browse different food categories and menu items  
+- Add/remove items from the cart with images and quantity controls  
+- Responsive design optimized for desktop and mobile  
+- Smooth navigation including About section and other menu pages  
+- Built with Vite for fast development and optimized builds  
+- Easy to extend and customize for real-world projects
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
->>>>>>> 549889bba882e4d6ed3c8ea0250dce9597296438
-"# tastytrack" 
+---
+
+## Technologies Used
+
+- React  
+- Vite  
+- JavaScript (ES6+)  
+- CSS (custom styling or CSS framework if used)  
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or above recommended)  
+- npm (comes with Node.js)
+
+### Installation
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/venkatanaresh4285/food-delivery-app.git
+   cd food-delivery-app
