@@ -1,0 +1,607 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  color: #333;
+}
+
+/* Navbar fixed at top, with logo left and nav links right */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #ff5722;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-logo {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links button:hover {
+  text-decoration: underline;
+  color: #ffe0b2;
+}
+
+/* Main content padding adjusted to avoid being hidden behind fixed navbar */
+.main-content {
+  padding: 6rem 2rem 2rem 2rem; /* top padding matches navbar height */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Food items grid */
+.food-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Each food card style */
+.food-item {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.food-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Food image style */
+.food-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+/* Food title */
+.food-item h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #ff5722;
+}
+
+/* Food description */
+.food-item p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* Food price */
+.food-item .price {
+  font-weight: bold;
+  color: #222;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+  .nav-links button {
+    font-size: 0.9rem;
+  }
+  .food-items {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  .food-item img {
+    height: 110px;
+  }
+}
+
+/* Restaurant list container */
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+/* Each restaurant item as a rectangle card */
+.restaurant-item {
+  background: white;
+  width: 280px;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #ff5722;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.restaurant-item:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+/* Menu list container - flex or grid for neat alignment */
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+/* Each menu item styled as rectangle card */
+.menu-item {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Layout inside menu item */
+.menu-item span:first-child {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ff5722;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item span:last-child {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.menu-item button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+  background-color: #e64a19;
+}
+/* Cart styles */
+.cart {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cart h2 {
+  color: #ff5722;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.cart-item button {
+  background: #4de208;
+  border: none;
+  color: white;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item button:hover {
+  background: #eb0872;
+}
+
+.cart h3 {
+  text-align: right;
+  font-weight: bold;
+  color: #222;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+.homepage {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #0ebfe7;
+  padding: 0 1rem;
+}
+
+.homepage h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.homepage .quote {
+  font-style: italic;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #bf360c;
+  max-width: 600px;
+}
+.homepage {
+  /* full viewport height */
+  min-height: 80vh;
+
+  /* background image */
+  background-image: url("https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1350&q=80");
+
+  background-size: cover; /* make image cover the whole area */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* overlay to darken the image so text is readable */
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Make body and html take full height */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Fullscreen background for homepage */
+.homepage {
+  height: 100vh; /* full viewport height */
+  width: 100vw; /* full viewport width */
+  background-image: url("https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+
+  /* optionally add some padding-top if navbar is fixed over it */
+  padding-top: 80px;
+}
+
+.homepage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* stronger dark overlay */
+  z-index: 0;
+}
+
+.homepage > * {
+  position: relative; /* bring text above overlay */
+  z-index: 1;
+}
+
+/* Adjust navbar z-index so it stays above */
+.navbar {
+  z-index: 10;
+}
+.restaurant-image,
+.menu-image {
+  width: 120px; /* Adjust size as you want */
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.restaurant-item,
+.menu-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.menu-item span {
+  margin: 0 10px;
+  flex-grow: 1;
+}
+.restaurant-image {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.menu-image {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 6px;
+}
+
+.restaurant-item,
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+html {
+  scroll-behavior: smooth;
+}
+.homepage {
+  background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  padding: 100px 20px;
+}
+.homepage h2 {
+  color: #d35400; /* Warm pumpkin orange */
+}
+
+.homepage h2 {
+  color: #c0392b; /* Deep, appetizing red */
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.homepage p.quote {
+  color: #f39c12; /* Warm golden accent */
+  font-style: italic;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.homepage p {
+  color: #2c3e50; /* Dark charcoal for readability */
+  font-size: 1.2rem;
+}
+.cart {
+  background: #fff8e1; /* light warm tone */
+  border: 1px solid #ffcc80; /* slightly darker accent */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 2rem auto; /* center on page */
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ffe0b2;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart button {
+  background: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart button:hover {
+  background: #e64a19;
+}
+.restaurant-item,
+.menu-item {
+  background: #ffffff; /* pure white */
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.restaurant-item img,
+.menu-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.menu-item {
+  justify-content: space-between; /* name+price on left, button on right */
+}
+
+.menu-item button {
+  background: #ff5722;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Center restaurant list */
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+/* Restaurant cards */
+.restaurant-item {
+  width: 260px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurant-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+/* Keep menu-list as a vertical list, but center the container */
+.menu-list {
+  max-width: 600px;
+  margin: 0 auto; /* centers the menu container */
+  padding: 0;
+  list-style: none;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.menu-item img {
+  width: 100%; /* Full width of card */
+  height: 160px; /* Increase height */
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 1rem;
+  margin-left: 2rem;
+}
+.restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+  justify-items: center; /* center each item inside its grid cell */
+}
+
+.restaurant-item {
+  width: 100%; /* full width of the grid cell */
+  max-width: 260px; /* optional max width */
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+  justify-items: center; /* center items horizontally */
+}
+
+.menu-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 220px; /* optional, to limit item width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
