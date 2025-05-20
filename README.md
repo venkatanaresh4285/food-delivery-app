@@ -38,3 +38,15 @@ Users can browse menus, add items to the cart, and enjoy a smooth, interactive e
    ```bash
    git clone https://github.com/venkatanaresh4285/food-delivery-app.git
    cd food-delivery-app
+
+2.Install Dependencies
+  npm install
+
+3.Run the development server:
+  npm run dev
+
+4.Open your browser at http://localhost:5173 (or the URL shown in terminal)
+
+5.Build for Production
+  npm run build
+
